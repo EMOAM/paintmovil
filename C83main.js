@@ -1,4 +1,4 @@
-var mouseEvent = "empty";
+//var mouseEvent = "empty";
 var last_position_of_x, last_position_of_y;
 canvas = document.getElementById("myCanvas");
 color = "black";
@@ -23,12 +23,13 @@ if(width < 992){
 canvas.addEventListener("touchstart", my_touchstart);
 function my_touchstart(e){
     last_position_of_x = e.touches[0].clientX - canvas.offsetLeft;
-
+    last_position_of_y = e.touches[0].clientY - canvas.offsetTop;
 }
 
 canvas.addEventListener("touchmove", my_touchmove);
 function my_touchmove(e){
     current_position_of_mouse_x = e.touches[0].clientX - canvas.offsetLeft;
+    current_position_of_mouse_y = e.touches[0].clientY - canvas.offsetTop;
     ctx.beginPath();
     ctx.strokeStyle = color;
     ctx.lineWidth = 1;
